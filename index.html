@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marauder's Map Footsteps</title>
+<style>
+  body {
+    background-color: #e7d7b7;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .footstepLeft {
+    width: 30px;
+    height: 30px;
+    background-image: url('footstep left.png'); /* Replace 'footstep.png' with your PNG image */
+    background-size: cover;
+    position: absolute;
+     z-index: 1;
+    animation: fadeIn 0.5s ease forwards;
+  }
+  .footstepRight {
+    width: 30px;
+    height: 30px;
+    background-image: url('footstep right.png'); /* Replace 'footstep.png' with your PNG image */
+    background-size: cover;
+    position: absolute;
+     z-index: 1;
+    animation: fadeIn 0.5s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+<script>
+function createFootstepLeft(x, y, prevX, prevY) {
+    const footstepLeft = document.createElement('div');
+    footstepLeft.classList.add('footstepLeft');
+    footstepLeft.style.left = x + 'px';
+    footstepLeft.style.top = y + 'px';
+    document.body.appendChild(footstepLeft);
+    
+    // Calculate angle between current and next footstep positions
+    const dx = x - prevX;
+    const dy = y - prevY;
+    const angleOffset = 70;
+    const angle = Math.atan2(dy, dx) * (180 / Math.PI) + angleOffset; // Convert radians to degrees and adjust by 90 degrees
+
+    // Rotate the footstep
+    footstepLeft.style.transform = `rotate(${angle}deg)`;
+
+    setTimeout(() => {
+        // Apply the fade-out animation just before the footstep is removed
+        footstepLeft.style.animation = 'fadeOut 1.5s ease forwards';
+        setTimeout(() => {
+            footstepLeft.remove();
+        }, 1500); // Remove the footstep after the fade-out animation has finished
+    }, 400);
+}
+function createFootstepRight(x, y, prevX, prevY) {
+    const footstepRight = document.createElement('div');
+    footstepRight.classList.add('footstepRight');
+    footstepRight.style.left = x + 'px';
+    footstepRight.style.top = y + 'px';
+    document.body.appendChild(footstepRight);
+    
+    // Calculate angle between current and next footstep positions
+    const dx = x - prevX;
+    const dy = y - prevY;
+    const angleOffset = 70;
+    const angle = Math.atan2(dy, dx) * (180 / Math.PI) + angleOffset; // Convert radians to degrees and adjust by 90 degrees
+
+    // Rotate the footstep
+    footstepRight.style.transform = `rotate(${angle}deg)`;
+
+    setTimeout(() => {
+        // Apply the fade-out animation just before the footstep is removed
+        footstepRight.style.animation = 'fadeOut 1.5s ease forwards';
+        setTimeout(() => {
+            footstepRight.remove();
+        }, 1500); // Remove the footstep after the fade-out animation has finished
+    }, 400);
+}
+
+
+function createRandomPath() {
+    var pathLength = 20 + Math.random() * 5;
+    var path = [];
+    var maxStep = 40 + Math.random() * 10;
+    var angle = Math.random() * 2 * Math.PI; // Random initial direction
+    var maxAngleChange = 20 * Math.PI / 180; // Maximum change in angle per step
+
+    var point = {
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight
+    };
+    path.push(point);
+
+    for (var i = 1; i < pathLength; i++) {
+        var prevPoint = path[i - 1];
+        var newPoint = {
+            x: prevPoint.x + Math.cos(angle) * maxStep,
+            y: prevPoint.y + Math.sin(angle) * maxStep
+        };
+
+        // If the point hits the wall, bounce it back by reversing the angle
+        if (newPoint.x <= 0 || newPoint.x >= window.innerWidth) {
+            angle = Math.PI - angle;
+        }
+        if (newPoint.y <= 0 || newPoint.y >= window.innerHeight) {
+            angle = 2 * Math.PI - angle;
+        }
+
+        // Ensure the points are within the window's boundaries
+        newPoint.x = Math.max(0, Math.min(window.innerWidth, newPoint.x));
+        newPoint.y = Math.max(0, Math.min(window.innerHeight, newPoint.y));
+        path.push(newPoint);
+
+        // Randomly change the angle
+        angle += (Math.random() * 2 - 1) * maxAngleChange;
+    }
+
+    return path;
+}
+
+function simulatePath() {
+    let path = createRandomPath();
+    let i = 0;
+
+    let intervalId = setInterval(function() {
+        if (i >= path.length) {
+            clearInterval(intervalId); // Stop the interval when all points have been processed
+            simulatePath(); // Start simulating the next path
+        } else if (i % 2 == 0) {
+            let point = path[i];
+            createFootstepLeft(point.x, point.y, path[i - 1]?.x, path[i - 1]?.y);
+            i++;
+        }
+        else {
+            let point = path[i];
+            createFootstepRight(point.x, point.y, path[i - 1]?.x, path[i - 1]?.y);
+            i++;
+        }
+    }, 200); // 1000 milliseconds = 1 second
+}
+
+function simulateFootsteps(numPaths) {
+    for (let j = 0; j < numPaths; j++) {
+        setTimeout(simulatePath, j * 1000); // Start simulating each path with a delay of 1 second
+    }
+}
+
+simulateFootsteps(200); // Simulate 3 paths at once
+
+</script>
+</body>
+</html>
