@@ -1,0 +1,47 @@
+.nav-item{
+    align-self: center;
+    text-decoration: none;
+    font-family: 'Helvetica', sans-serif;
+    transition: 0.2s;
+    position: relative;
+}
+.nav-item::after{
+    content: '';
+    position: absolute;
+    width: 50%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 25%;
+    background-color: #1c07bbd2;
+    transform-origin: bottom right;
+    transition: transform 0.3s ;
+}
+.nav-item:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+.nav-item:hover{
+    color: #8a0019;
+    
+}
+.nav-item:active{
+    color: #8a0019;
+}   
+.col{
+    padding: 15px;
+    margin: 0;
+
+}
+
+.nav-link:active{
+    color: #8a0019;
+}
+.nav-link{
+    color: red;
+    text-decoration: none;
+    font-family: 'Helvetica', sans-serif;
+    transition: 0.2s;
+    position: relative;
+}
