@@ -42128,7 +42128,7 @@ a.u-link.u-text-hover-grey-90:hover {
         .u-table-alt-custom-color-3 tr:nth-child(even)
         {
             color: #111111;
-            background-color: #ffaf00;
+            background-color: #f9d073;
         }
 
         .u-input.u-custom-color-3,
@@ -42137,7 +42137,7 @@ a.u-link.u-text-hover-grey-90:hover {
         .u-button-style.u-custom-color-3[class*="u-border-"]
         {
             color: #111111 !important;
-            background-color: #ffaf00 !important;
+            background-color: #f9d073 !important;
         }
 
         .u-button-style.u-custom-color-3:hover,
@@ -42152,7 +42152,7 @@ a.u-link.u-text-hover-grey-90:hover {
         li.active > .u-button-style.u-button-style.u-custom-color-3[class*="u-border-"]
         {
             color: #111111 !important;
-            background-color: #e69d00 !important;
+            background-color: #f8c450 !important;
         }
 
         .u-hover-custom-color-3:hover,
@@ -42180,11 +42180,11 @@ a.u-link.u-text-hover-grey-90:hover {
         input.u-field-input.u-field-input.u-active-custom-color-3:checked
         {
             color: #111111 !important;
-            background-color: #ffaf00 !important;
+            background-color: #f9d073 !important;
         }
 
         a.u-link.u-hover-custom-color-3:hover {
-            color: #ffaf00 !important;
+            color: #f9d073 !important;
         }
 
         
@@ -42297,14 +42297,14 @@ a.u-link.u-text-hover-grey-90:hover {
         .u-border-custom-color-3.u-field-input.u-field-input,
         .u-separator-custom-color-3:after
         {
-            border-color: #ffaf00;
-            stroke: #ffaf00;
+            border-color: #f9d073;
+            stroke: #f9d073;
         }
 
         .u-button-style.u-border-custom-color-3
         {
-            border-color: #ffaf00 !important;
-            color: #ffaf00 !important;
+            border-color: #f9d073 !important;
+            color: #f9d073 !important;
             background-color: transparent !important;
         }
 
@@ -42312,7 +42312,7 @@ a.u-link.u-text-hover-grey-90:hover {
         .u-button-style.u-border-custom-color-3:focus
         {
             border-color: transparent !important;
-            color: #e69d00 !important;
+            color: #f8c450 !important;
             background-color: transparent !important;
         }
 
@@ -42328,18 +42328,18 @@ a.u-link.u-text-hover-grey-90:hover {
         li.active > a.u-button-style.u-button-style.u-border-active-custom-color-3,
         input.u-field-input.u-field-input.u-border-active-custom-color-3:checked
         {
-            color: #ffaf00 !important;
-            border-color: #ffaf00 !important;
+            color: #f9d073 !important;
+            border-color: #f9d073 !important;
         }
 
         .u-link.u-border-custom-color-3[class*="u-border-"]
         {
-            border-color: #ffaf00 !important;
+            border-color: #f9d073 !important;
         }
 
         .u-link.u-border-custom-color-3[class*="u-border-"]:hover
         {
-            border-color: #e69d00 !important;
+            border-color: #f8c450 !important;
         }
         
 
@@ -42492,7 +42492,7 @@ a.u-link.u-text-hover-grey-90:hover {
         a.u-button-style.u-text-custom-color-3,
         a.u-button-style.u-text-custom-color-3[class*="u-border-"]
         {
-            color: #ffaf00 !important;
+            color: #f9d073 !important;
         }
 
         a.u-button-style.u-text-custom-color-3:hover,
@@ -42504,7 +42504,7 @@ a.u-link.u-text-hover-grey-90:hover {
         a.u-button-style.u-button-style.u-text-custom-color-3.active,
         a.u-button-style.u-button-style.u-text-custom-color-3[class*="u-border-"].active
         {
-            color: #e69d00 !important;
+            color: #f8c450 !important;
         }
 
         a.u-button-style:hover > .u-text-hover-custom-color-3,
@@ -42531,7 +42531,7 @@ a.u-link.u-text-hover-grey-90:hover {
         .u-popupmenu-items.u-text-hover-custom-color-3 .u-nav-link:hover,
         .u-popupmenu-items.u-popupmenu-items.u-text-active-custom-color-3 .u-nav-link.active
         {
-            color: #ffaf00 !important;
+            color: #f9d073 !important;
         }
 
         .u-text-custom-color-3 .u-svg-link,
@@ -42540,17 +42540,17 @@ a.u-link.u-text-hover-grey-90:hover {
         .u-button-style.u-button-style.active > .u-text-active-custom-color-3 .u-svg-link,
         .u-text-hover-custom-color-3:focus .u-svg-link
         {
-            fill: #ffaf00;
+            fill: #f9d073;
         }
 
         .u-link.u-text-custom-color-3:hover
         {
-            color: #e69d00 !important;
+            color: #f8c450 !important;
         }
 
         a.u-link.u-text-hover-custom-color-3:hover
         {
-            color: #ffaf00 !important;
+            color: #f9d073 !important;
         }
 
         .u-body
@@ -43187,6 +43187,7 @@ a.u-link.u-text-hover-grey-90:hover {
 .u-header .u-nav-1 {
   font-weight: 700;
   font-size: 1.875rem;
+  letter-spacing: normal;
 }
 
 .u-header .u-nav-2 {
@@ -43208,10 +43209,6 @@ a.u-link.u-text-hover-grey-90:hover {
 
   .u-header .u-menu-1 {
     margin: 12px 0;
-  }
-
-  .u-header .u-nav-1 {
-    letter-spacing: normal;
   }
 }
 @media (max-width: 991px) {
@@ -43257,6 +43254,8 @@ a.u-link.u-text-hover-grey-90:hover {
 .u-footer .u-image-1 {
   width: 287px;
   height: 134px;
+  transition-duration: 0.5s;
+  transform: translateX(0px) translateY(0px) scale(1) rotate(0deg);
   margin: 11px 0 0 auto;
 }
 @media (max-width: 1199px) {
@@ -43291,6 +43290,22 @@ a.u-link.u-text-hover-grey-90:hover {
     margin-right: auto;
   }
 }
+.u-footer .u-image-1, .u-footer .u-image-1:before, .u-footer .u-image-1 > .u-container-layout:before {
+    transition-property: fill, color, background-color, stroke-width, border-style, border-width, border-top-width, border-left-width, border-right-width, border-bottom-width, custom-border, borders, box-shadow, text-shadow, opacity, border-radius, stroke, border-color, font-size, font-style, font-weight, text-decoration, letter-spacing, transform, background-image, image-zoom, background-size, background-position
+}
+.u-footer .u-image-1.u-image-1.u-image-1:hover {
+    transform: scale(1.25) !important
+}
+.u-footer .u-image-1.u-image-1.u-image-1.hover {
+    transform: scale(1.25) !important
+}
+.u-footer .u-container-layout:hover .u-image-1 {
+    transform: rotate(0deg) scale(1) translateX(0px) translateY(0px) !important
+}
+.u-container-layout.hover .u-footer .u-image-1 {
+    transform: rotate(0deg) scale(1) translateX(0px) translateY(0px) !important
+} 
+
 
  /*begin-variables base-font-size*/ 
  html { font-size: 16px; }
